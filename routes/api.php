@@ -21,6 +21,10 @@ Route::group(['middleware' => ['jwt.auth']], function () {
 
 Route::post('/login', 'AuthController@authenticate');
 
-Route::apiResource('User', 'UserController');
-Route::apiResource('Pelicula','PeliculaController');
+Route::apiResource('Administrador', 'AdministradorController');
+Route::apiResource('Condicion','CondicionController');
+Route::apiResource('Departamento','DepartamentoController');
+Route::apiResource('Documento','DocumentoController');
+Route::apiResource('Encargado','EncargadoController');
+Route::apiResource('Tramite','TramiteController');
 
