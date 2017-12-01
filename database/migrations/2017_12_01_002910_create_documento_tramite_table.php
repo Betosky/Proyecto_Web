@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTramiteTable extends Migration
+class CreateDocumentoTramiteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,13 @@ class CreateTramiteTable extends Migration
      */
     public function up()
     {
-        Schema::create('tramite', function (Blueprint $table) {
+        Schema::create('documento_tramite', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('documento_id')->unsigned();
-            $table->integer('condicion_id')->unsigned();
-            $table->integer('administrador_id')->unsigned();
-            $table->string('nombre');
-            $table->text('descripcion');
+            $table->integer('tramite_id')->unsigned();
 
             $table->foreign('documento_id')->references('id')->on('documento');
-            $table->foreign('condicion_id')->references('id')->on('condicion');
-            $table->foreign('administrador_id')->references('id')->on('administrador');
+            $table->foreign('tramite_id')->references('id')->on('tramite');
         });
     }
 
@@ -34,6 +30,6 @@ class CreateTramiteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tramite');
+        Schema::dropIfExists('documento_tramite');
     }
 }

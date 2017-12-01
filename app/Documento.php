@@ -14,11 +14,4 @@ class Documento extends Model
 
     public $timestamps = false;
 
-    public function tramites(){
-			return $this->belongsTo('app/Tramite');
-		}
-
-		public function departamentos(){
-			return $this->belongsTo('app/Departamento');
-		}
 }

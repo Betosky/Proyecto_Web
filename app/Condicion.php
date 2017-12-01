@@ -10,11 +10,8 @@ class Condicion extends Model
 
     protected $primaryKey = 'id';
 
-    protected $fillable = ['nombre', 'cumple']; 
+    protected $fillable = ['nombre', 'descripcion']; 
 
     public $timestamps = false;
 
-    public function tramite(){
-			return $this->belongsTo('app/Tramite');
-		}
 }

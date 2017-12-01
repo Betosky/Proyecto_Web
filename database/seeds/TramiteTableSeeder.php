@@ -12,11 +12,9 @@ class TramiteTableSeeder extends Seeder
     public function run()
     {
         DB::table('tramite')->insert([
-        	'documento_id' => 1,
-        	'nombre' => 'Solicitud de coninuidad de estudios',
-        	'descripcion' => 'Tramite que se realiza para alumnos que presenten causal de eliminacion',
-        	'condicion_id' => 1,
-        	'administrador_id' => 1,
+            'administrador_id' => 1,
+        	'nombre' => 'Inscripción de alumnos laborantes',
+        	'descripcion' => 'Tramite para alumnos que deseen comenzar a trabajar en sus tiempos libres para acercarlos al mundo laboral',
         ]);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCondicionTable extends Migration
+class CreateTramiteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,13 @@ class CreateCondicionTable extends Migration
      */
     public function up()
     {
-        Schema::create('condicion', function (Blueprint $table) {
+        Schema::create('tramite', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('administrador_id')->unsigned();
             $table->string('nombre');
-            $table->boolean('cumple');
+            $table->text('descripcion');
+
+            $table->foreign('administrador_id')->references('id')->on('administrador');
         });
     }
 
@@ -27,6 +30,6 @@ class CreateCondicionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('condicion');
+        Schema::dropIfExists('tramite');
     }
 }

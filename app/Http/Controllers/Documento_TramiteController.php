@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Departamento;
-
-class DepartamentoController extends Controller
+use App\Documento_Tramite;
+class Documento_TramiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +13,7 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        return Departamento::all();
+        return Documento_Tramite::all();
     }
 
     /**
@@ -35,7 +34,7 @@ class DepartamentoController extends Controller
      */
     public function store(Request $request)
     {
-        Departamento::create($request->all());
+        Documento_Tramite::create($request->all());
         return ['created'=>true];
     }
 
@@ -47,8 +46,9 @@ class DepartamentoController extends Controller
      */
     public function show($id)
     {
-        return Departamento::find($id);
+        return Documento_Tramite::find($id);
     }
+
     /**
      * Show the form for editing the specified resource.
      *
@@ -69,8 +69,8 @@ class DepartamentoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $departamento = Departamento::find($id);
-        $departamento->update($request->all());
+        $condicion = Documento_Tramite::find($id);
+        $condicion->update($request->all());
         return ['update'=>true];
     }
 
@@ -82,7 +82,7 @@ class DepartamentoController extends Controller
      */
     public function destroy($id)
     {
-        Departamento::destroy($id);
+        Documento_Tramite::destroy($id);
         return ['deleted'=>true];
     }
 }

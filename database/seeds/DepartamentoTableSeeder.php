@@ -12,7 +12,7 @@ class DepartamentoTableSeeder extends Seeder
     public function run()
     {
         DB::table('departamento')->insert([
-        	'nombre' => 'Direccion de deportes',
+        	'nombre' => 'PROENTA UFRO',
         	'encargado_id' => 1,
         ]);
     }
